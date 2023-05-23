@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="aes" Version="10.0.0" InternalType="">
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="GNU makefile onestep build"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="GNU makefile onestep build"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <VirtualDirectory Name="src">
+    <File Name="../src/defines.h"/>
+    <File Name="../src/includes.h"/>
+    <File Name="../src/main.cpp"/>
+    <File Name="../src/main.h"/>
+    <VirtualDirectory Name="core">
+      <File Name="../src/core/osaudio.cpp"/>
+      <File Name="../src/core/osaudio.h"/>
+      <File Name="../src/core/osframebuffer.cpp"/>
+      <File Name="../src/core/osframebuffer.h"/>
+      <File Name="../src/core/osled.cpp"/>
+      <File Name="../src/core/osled.h"/>
+      <File Name="../src/core/osmount.cpp"/>
+      <File Name="../src/core/osmount.h"/>
+      <File Name="../src/core/osprocess.cpp"/>
+      <File Name="../src/core/osprocess.h"/>
+      <File Name="../src/core/ostimer.cpp"/>
+      <File Name="../src/core/ostimer.h"/>
+      <File Name="../src/core/aspinput.cpp"/>
+      <File Name="../src/core/aspinput.h"/>
+      <File Name="../src/core/mvsxinput.cpp"/>
+      <File Name="../src/core/mvsxinput.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="game">
+      <File Name="../src/game/game.cpp"/>
+      <File Name="../src/game/game.h"/>
+      <File Name="../src/game/gameconfig.cpp"/>
+      <File Name="../src/game/gameconfig.h"/>
+      <File Name="../src/game/gameinput.cpp"/>
+      <File Name="../src/game/gameinput.h"/>
+      <VirtualDirectory Name="state">
+        <File Name="../src/game/state/basegamestate.cpp"/>
+        <File Name="../src/game/state/basegamestate.h"/>
+        <File Name="../src/game/state/statecheckinputs.cpp"/>
+        <File Name="../src/game/state/statecheckinputs.h"/>
+        <File Name="../src/game/state/statecheckleds.cpp"/>
+        <File Name="../src/game/state/stateexec.cpp"/>
+        <File Name="../src/game/state/stateexec.h"/>
+        <File Name="../src/game/state/statemainmenu.cpp"/>
+        <File Name="../src/game/state/statemainmenu.h"/>
+        <File Name="../src/game/state/statemounting.cpp"/>
+        <File Name="../src/game/state/statemounting.h"/>
+        <File Name="../src/game/state/statecheckaudio.h"/>
+        <File Name="../src/game/state/statecheckaudio.cpp"/>
+        <File Name="../src/game/state/statecheckleds.h"/>
+        <File Name="../src/game/state/statequit.cpp"/>
+        <File Name="../src/game/state/statequit.h"/>
+        <File Name="../src/game/state/statecredits.cpp"/>
+        <File Name="../src/game/state/statecredits.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="render">
+      <File Name="../src/render/drawlistobject.cpp"/>
+      <File Name="../src/render/drawlistobject.h"/>
+      <File Name="../src/render/menuitem.cpp"/>
+      <File Name="../src/render/menuitem.h"/>
+      <File Name="../src/render/renderer.cpp"/>
+      <File Name="../src/render/renderer.h"/>
+      <File Name="../src/render/font.cpp"/>
+      <File Name="../src/render/font.h"/>
+      <File Name="../src/render/bitmaploader.h"/>
+      <File Name="../src/render/bitmaploader.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="audio">
+      <File Name="../src/audio/audiomanager.cpp"/>
+      <File Name="../src/audio/audiomanager.h"/>
+      <File Name="../src/audio/waveloader.cpp"/>
+      <File Name="../src/audio/waveloader.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="util">
+      <File Name="../src/util/ringbuffer.cpp"/>
+      <File Name="../src/util/ringbuffer.h"/>
+      <File Name="../src/util/util.cpp"/>
+      <File Name="../src/util/util.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+</CodeLite_Project>

@@ -1,0 +1,63 @@
+####################
+#	Makefile for Aes
+####################
+#Usage: 
+	#Debug
+		#To Build: make -f asp_make DEBUG=y
+		#To Clean: make -f asp_make DEBUG=y clean
+	#Release
+		#To Build: make -f asp_make
+		#To Clean: make -f asp_make clean
+
+ifeq (${DEBUG},y)
+OPTIMIZE_FLAGS := -O0 -g
+BUILD_DIR := ./build_asp_debug
+else
+OPTIMIZE_FLAGS := -O3
+BUILD_DIR := ./build_asp
+endif
+
+#Setup toolchain paths
+BINPATH := ../toolchain-mvsx/arm-2011.09/bin
+
+CXX := ${BINPATH}/arm-none-linux-gnueabi-g++
+CC  := ${BINPATH}/arm-none-linux-gnueabi-gcc
+
+TARGET := $(BUILD_DIR)/AES
+
+SRC_DIRS := ./src
+
+# Find all C/C++ files we want to compile
+# Note the single quotes around the * expressions. Make will incorrectly expand these otherwise.
+SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
+
+# String substitution for every C/C++ file
+# As an example, main.cpp will turn into ./build/main.cpp.o
+OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
+
+INC_DIRS := $(shell find $(SRC_DIRS) -type d)			
+INC_FLAGS := $(addprefix -I, $(INC_DIRS))
+
+CXXFLAGS :=  -s -fomit-frame-pointer -funroll-loops  -Wunused-result 
+CXXFLAGS += -DMAX_WBITS=8 -DMAX_MEM_LEVEL=4
+CXXFLAGS += $(OPTIMIZE_FLAGS)
+CXXFLAGS += -DASP
+
+LDFLAGS := -static -s -lrt -lpthread 
+
+$(TARGET): $(OBJS)
+	@echo "LD $@"
+	@$(CXX) -o $@ $(OBJS) $(LDFLAGS)
+	
+$(BUILD_DIR)/%.cpp.o: %.cpp
+	@echo "CXX $<"
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) $(INC_FLAGS) -c $< -o $@ 
+
+clean:
+	rm -f $(TARGET)
+	rm -f $(OBJS)
+
+.PHONY: clean
+
+all: $(TARGET)
