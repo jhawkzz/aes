@@ -83,8 +83,8 @@ void OSInput::CreateLookup( )
     mMVSXInputLookup[ P1_Button_2   ] = MVSXInput_P1_Yellow;
     mMVSXInputLookup[ P1_Button_3   ] = MVSXInput_P1_Green;
     mMVSXInputLookup[ P1_Button_4   ] = MVSXInput_P1_Blue;
-    mMVSXInputLookup[ P1_Button_5   ] = MVSXInput_P2_MidBot;
-    mMVSXInputLookup[ P1_Button_6   ] = MVSXInput_P2_RightBot;
+    mMVSXInputLookup[ P1_Button_5   ] = MVSXInput_P1_MidBot;
+    mMVSXInputLookup[ P1_Button_6   ] = MVSXInput_P1_RightBot;
     
     // Player 2
     mMVSXInputLookup[ P2_InsertCoin ] = MVSXInput_SelectGame;
